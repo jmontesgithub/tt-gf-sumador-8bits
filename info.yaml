@@ -1,27 +1,28 @@
 # Tiny Tapeout project information
 project:
-  title: "Sumador Ripple Carry de 8 bits"
-  author: "Jorge Saul Montes Caceres"
-  discord: ""
-  description: "Suma dos números de 8 bits"
-  language: "Verilog"
-  clock_hz: 0
+  title:        "8-bit Ripple Carry Adder"      # Project title
+  author:       "JORGE SAUL MONTES CACERES"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "8-bit ripple carry adder"      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 340x160 uM.
-  # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
-  tiles: "1x1"
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
 
-  # Your top module name must start with "tt_um_".
-  top_module: "tt_um_8bitadder"
+  # Your top module name must start with "tt_um_". Make it unique by including your github username:
+  top_module:  "tt_um_8bitadder"
 
-  # Source files are relative to ./src.
-  # Also check PROJECT_SOURCES in test/Makefile.
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "project.v"
 
-# Pin labels for the datasheet and website.
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
-  # Entradas del primer operando, A
+  # Inputs
   ui[0]: "A0"
   ui[1]: "A1"
   ui[2]: "A2"
@@ -31,7 +32,7 @@ pinout:
   ui[6]: "A6"
   ui[7]: "A7"
 
-  # Salidas de la suma
+  # Outputs
   uo[0]: "SUM0"
   uo[1]: "SUM1"
   uo[2]: "SUM2"
@@ -41,7 +42,7 @@ pinout:
   uo[6]: "SUM6"
   uo[7]: "SUM7"
 
-  # Pines bidireccionales usados como entradas del segundo operando, B
+  # Bidirectional pins
   uio[0]: "B0"
   uio[1]: "B1"
   uio[2]: "B2"
